@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-edit-book',
@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class EditBookComponent {
 
+  constructor() {}
 }
