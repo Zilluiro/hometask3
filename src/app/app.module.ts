@@ -9,6 +9,7 @@ import { BookListItemComponent } from './components/book-list-item/book-list-ite
 import { EditBookComponent } from './components/edit-book/edit-book.component';
 import { ViewBookComponent } from './components/view-book/view-book.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

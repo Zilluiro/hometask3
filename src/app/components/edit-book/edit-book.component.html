@@ -3,41 +3,41 @@
   <h4 class="mt-2">Add Book</h4>
   <hr>
 
-  <form>
+  <form [formGroup]="editBookForm">
     <div class="d-flex flex-row">
       <div class="w-50 pe-5">
         <div class="form-group">
           <label>Title</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="title">
         </div>
 
         <div class="form-group">
           <label>Cover</label>
-          <input type="file" class="form-control">
+          <input type="file" class="form-control" formControlName="coverFile" (change)="onFileChange($event)">
         </div>
 
         <div class="form-group">
           <label>Genre</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="genre">
         </div>
 
         <div class="form-group">
           <label>Author</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="author">
         </div>
       </div>
 
       <div class="w-50 ps-5">
         <div class="d-flex flex-row">
           <label class="me-3">Content</label>
-          <textarea class="form-control" rows="7"></textarea>
+          <textarea class="form-control" rows="7" formControlName="content"></textarea>
         </div>
       </div>
     </div>
 
     <div class="d-flex justify-content-center my-3">
-      <button type="submit" class="btn btn-primary mx-2"></button>
-      <button type="submit" class="btn btn-clear">Clear</button>
+      <button type="submit" class="btn btn-primary mx-2" (click)="addOrUpdate()">{{isEntryNew ? "Add" : "Edit"}}</button>
+      <button type="submit" class="btn btn-clear" (click)="clear()">Clear</button>
     </div>
   </form>
 </div>
