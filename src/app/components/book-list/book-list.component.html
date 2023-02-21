@@ -1,0 +1,13 @@
+<button class="btn btn-action px-4 py-4 border border-dark rounded-0 border-end-0 border-bottom-0 ms-2" (click)="getAllBooks()">
+  <span>All</span>
+</button>
+
+<button class="btn btn-action px-4 py-4 border border-dark rounded-0 border-bottom-0" (click)="getRecommendedBooks()">
+  <span>Recommended</span>
+</button>
+
+<div class="border border-dark d-flex flex-wrap book-list">
+  <div *ngFor="let book of books$ | async" class="book p-2">
+    <app-book-list-item [book]="book"></app-book-list-item>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+.book-content {
+  max-height: 300px;
+  overflow: auto;
+  text-indent: 30px;
+}
+

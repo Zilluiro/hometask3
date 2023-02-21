@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h4 class="modal-title text-center">Details</h4>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="close()"></button>
+</div>
+<div class="modal-body">
+  <div class="d-flex flex-row">
+    <div class="me-3">
+      <img src="{{book?.cover ? book?.cover : 'https://via.placeholder.com/200'}}" alt="cover" width="200" height="200">
+      <div class="d-flex flex-row justify-content-around">
+        <span class="me-2">Rating: {{ book?.rating?.toFixed(1) }}</span>
+        <span>Reviews: {{ book?.reviews?.length }}</span>
+      </div>
+    </div>
+    <div>
+      <h4>{{ book?.title }}</h4>
+      <small>{{ book?.author }}, {{book?.genre}}</small>
+      <p class="book-content mt-2">{{book?.content}}</p>
+    </div>
+  </div>
+
+  <hr>
+  <div *ngFor="let review of book?.reviews; index as i">
+    <p>{{review.reviewer}}</p>
+    <p>{{review.message}}</p>
+    <hr *ngIf="i < (book ? book.reviews.length - 1 : 0)">
+  </div>
+</div>
+

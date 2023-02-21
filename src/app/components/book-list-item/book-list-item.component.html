@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-between border">
+  <div class="d-flex p-3">
+    <img src="{{book?.cover ? book?.cover : 'https://via.placeholder.com/110'}}" alt="cover" class="d-block" width="110" height="110">
+    <div class="ps-3">
+      <div class="d-flex flex-column justify-content-between h-100">
+        <span class="book-title"> {{ book?.title }} </span>
+        <div>
+          <span class="me-2">Review: {{ book?.reviews?.length }}</span>
+          <span>Rating: {{ book?.rating?.toFixed(1) }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-1">
+    <button class="btn border me-2">
+      <img src="assets/eye.png" width="16" height="16" alt="view" (click)="details()">
+    </button>
+    <button class="btn border">
+      <img src="assets/pen.png" width="16" height="16" alt="edit" (click)="edit()">
+    </button>
+  </div>
+</div>
